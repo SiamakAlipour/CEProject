@@ -23,6 +23,14 @@ const images = [
 		url: 'https://picsum.photos/300',
 		caption: 'Slide 3',
 	},
+	{
+		url: 'https://picsum.photos/300',
+		caption: 'Slide 3',
+	},
+	{
+		url: 'https://picsum.photos/300',
+		caption: 'Slide 3',
+	},
 ];
 const responsive = {
 	superLargeDesktop: {

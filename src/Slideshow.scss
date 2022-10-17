@@ -21,9 +21,11 @@
 		position: relative;
 		cursor: pointer;
 		background-color: $primaryColor;
+		user-select: none;
 		&Image {
 			height: 250px;
 			background-size: contain;
+			pointer-events: none;
 		}
 		&:hover {
 			.slideshow__boxDescription {
