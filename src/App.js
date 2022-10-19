@@ -1,8 +1,9 @@
 import React from 'react';
+
 import Header from './Header';
+import Slideshow from './Slideshow';
 
 import './App.scss';
-import Slideshow from './Slideshow';
 
 function App() {
 	return (

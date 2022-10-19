@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './Header.scss';
 
@@ -20,12 +21,12 @@ function Header() {
 			{/* Login Menu */}
 			<ul className='header__loginMenu'>
 				<li>
-					<a href='#'>ورود</a>
+					<Link to='/login'>ورود</Link>
 				</li>
 				<li>
-					<a href='#' className='active'>
+					<Link to='/register' className='active'>
 						ثبت نام
-					</a>
+					</Link>
 				</li>
 			</ul>
 		</div>
