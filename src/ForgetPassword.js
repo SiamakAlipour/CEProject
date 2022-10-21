@@ -11,73 +11,67 @@ import './ForgetPassword.scss';
 
 const ForgetPassword = () => {
 	return (
-		<LRLayout>
-			<div className='forgetPassword'>
-				<div className='forgetPassword__title'>Enter your email</div>
-				<Formik
-					initialValues={{ email: '' }}
-					validate={(values) => {
-						const errors = {};
+		<LRLayout
+			titleText='Enter your email'
+			footerData={[{ text: 'login', url: '/login' }]}>
+			<Formik
+				initialValues={{ email: '' }}
+				validate={(values) => {
+					const errors = {};
 
-						if (!values.email) {
-							errors.email = 'Required';
-						} else if (
-							!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-						) {
-							errors.email = 'Invalid email address';
-						}
+					if (!values.email) {
+						errors.email = 'Required';
+					} else if (
+						!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+					) {
+						errors.email = 'Invalid email address';
+					}
 
-						return errors;
-					}}
-					onSubmit={(values, { setSubmitting }) => {
-						setTimeout(() => {
-							alert(JSON.stringify(values, null, 2));
+					return errors;
+				}}
+				onSubmit={(values, { setSubmitting }) => {
+					setTimeout(() => {
+						alert(JSON.stringify(values, null, 2));
 
-							setSubmitting(false);
-						}, 400);
-					}}>
-					{({
-						values,
+						setSubmitting(false);
+					}, 400);
+				}}>
+				{({
+					values,
 
-						errors,
+					errors,
 
-						touched,
+					touched,
 
-						handleChange,
+					handleChange,
 
-						handleBlur,
+					handleBlur,
 
-						handleSubmit,
+					handleSubmit,
 
-						isSubmitting,
-					}) => (
-						<form onSubmit={handleSubmit} className='forgetPassword__form'>
-							<OutlinedInput
-								className='forgetPassword__input'
-								size='small'
-								type='email'
-								name='email'
-								onChange={handleChange}
-								onBlur={handleBlur}
-								value={values.email}
-								placeholder='Email'
-								autoComplete='off'
-							/>
+					isSubmitting,
+				}) => (
+					<form onSubmit={handleSubmit} className='forgetPassword__form'>
+						<OutlinedInput
+							className='forgetPassword__input'
+							size='small'
+							type='email'
+							name='email'
+							onChange={handleChange}
+							onBlur={handleBlur}
+							value={values.email}
+							placeholder='Email'
+							autoComplete='off'
+						/>
 
-							<span>{errors.email && touched.email && errors.email}</span>
+						<span>{errors.email && touched.email && errors.email}</span>
 
-							<Button type='submit' disabled={isSubmitting} variant='contained'>
-								Receive Email
-							</Button>
-						</form>
-					)}
-				</Formik>
-				<div className='forgetPassword__footer'>
-					<p>
-						<Link to='/login'>login</Link>
-					</p>
-				</div>
-			</div>
+						<Button type='submit' disabled={isSubmitting} variant='contained'>
+							Receive Email
+						</Button>
+					</form>
+				)}
+			</Formik>
 		</LRLayout>
 	);
 };

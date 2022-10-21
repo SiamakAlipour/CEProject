@@ -9,123 +9,117 @@ import './Register.scss';
 
 const Register = () => {
 	return (
-		<LRLayout>
-			<div className='register'>
-				<div className='register__title'>Register</div>
-				<Formik
-					initialValues={{ email: '', password: '', repeatPassword: '' }}
-					validate={(values) => {
-						const errors = {};
+		<LRLayout
+			titleText='Register'
+			footerData={[{ text: 'login', url: '/login' }]}>
+			<Formik
+				initialValues={{ email: '', password: '', repeatPassword: '' }}
+				validate={(values) => {
+					const errors = {};
 
-						if (!values.email) {
-							errors.email = 'Required';
-						} else if (
-							!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-						) {
-							errors.email = 'Invalid email address';
-						}
-						if (!values.password) {
-							errors.password = 'Required';
-						} else if (
-							!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm.test(
-								values.password
-							)
-						) {
-							errors.password = 'Invalid password';
-						}
-						if (!values.repeatPassword) {
-							errors.repeatPassword = 'Required';
-						} else if (values.repeatPassword !== values.password) {
-							errors.repeatPassword = 'Invalid repeat password';
-						}
+					if (!values.email) {
+						errors.email = 'Required';
+					} else if (
+						!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+					) {
+						errors.email = 'Invalid email address';
+					}
+					if (!values.password) {
+						errors.password = 'Required';
+					} else if (
+						!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm.test(
+							values.password
+						)
+					) {
+						errors.password = 'Invalid password';
+					}
+					if (!values.repeatPassword) {
+						errors.repeatPassword = 'Required';
+					} else if (values.repeatPassword !== values.password) {
+						errors.repeatPassword = 'Invalid repeat password';
+					}
 
-						return errors;
-					}}
-					onSubmit={(values, { setSubmitting }) => {
-						setTimeout(() => {
-							alert(JSON.stringify(values, null, 2));
+					return errors;
+				}}
+				onSubmit={(values, { setSubmitting }) => {
+					setTimeout(() => {
+						alert(JSON.stringify(values, null, 2));
 
-							setSubmitting(false);
-						}, 400);
-					}}>
-					{({
-						values,
+						setSubmitting(false);
+					}, 400);
+				}}>
+				{({
+					values,
 
-						errors,
+					errors,
 
-						touched,
+					touched,
 
-						handleChange,
+					handleChange,
 
-						handleBlur,
+					handleBlur,
 
-						handleSubmit,
+					handleSubmit,
 
-						isSubmitting,
-					}) => (
-						<form onSubmit={handleSubmit} className='register__form'>
-							<OutlinedInput
-								className='register__input'
-								size='small'
-								type='email'
-								name='email'
-								onChange={handleChange}
-								onBlur={handleBlur}
-								value={values.email}
-								placeholder='Email'
-								autoComplete='off'
-							/>
+					isSubmitting,
+				}) => (
+					<form onSubmit={handleSubmit} className='register__form'>
+						<OutlinedInput
+							className='register__input'
+							size='small'
+							type='email'
+							name='email'
+							onChange={handleChange}
+							onBlur={handleBlur}
+							value={values.email}
+							placeholder='Email'
+							autoComplete='off'
+						/>
 
-							<span>{errors.email && touched.email && errors.email}</span>
+						<span>{errors.email && touched.email && errors.email}</span>
 
-							<OutlinedInput
-								className='register__input'
-								size='small'
-								type='password'
-								name='password'
-								onChange={handleChange}
-								onBlur={handleBlur}
-								value={values.password}
-								autoComplete='new-password'
-								placeholder='Password'
-							/>
+						<OutlinedInput
+							className='register__input'
+							size='small'
+							type='password'
+							name='password'
+							onChange={handleChange}
+							onBlur={handleBlur}
+							value={values.password}
+							autoComplete='new-password'
+							placeholder='Password'
+						/>
 
-							<span>
-								{errors.password && touched.password && errors.password}
-							</span>
-							<OutlinedInput
-								className='register__input'
-								size='small'
-								type='password'
-								name='repeatPassword'
-								onChange={handleChange}
-								onBlur={handleBlur}
-								value={values.repeatPassword}
-								placeholder='Repeat password'
-							/>
+						<span>
+							{errors.password && touched.password && errors.password}
+						</span>
+						<OutlinedInput
+							className='register__input'
+							size='small'
+							type='password'
+							name='repeatPassword'
+							onChange={handleChange}
+							onBlur={handleBlur}
+							value={values.repeatPassword}
+							placeholder='Repeat password'
+						/>
 
-							<span>
-								{errors.repeatPassword &&
-									touched.repeatPassword &&
-									errors.repeatPassword}
-							</span>
+						<span>
+							{errors.repeatPassword &&
+								touched.repeatPassword &&
+								errors.repeatPassword}
+						</span>
 
-							<Button
-								type='submit'
-								disabled={isSubmitting}
-								variant='contained'
-								color='primary'>
-								Register
-							</Button>
-						</form>
-					)}
-				</Formik>
-				<div className='register__footer'>
-					<p>
-						<Link to='/login'>login</Link>
-					</p>
-				</div>
-			</div>
+						<Button
+							type='submit'
+							disabled={isSubmitting}
+							variant='contained'
+							color='primary'>
+							Register
+						</Button>
+					</form>
+				)}
+			</Formik>
 		</LRLayout>
 	);
 };
