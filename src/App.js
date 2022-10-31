@@ -10,6 +10,9 @@ function App() {
 		<div className='app'>
 			<Header />
 			{/* <Slideshow /> */}
+			<Slideshow />
+			<Slideshow />
+			<Slideshow />
 		</div>
 	);
 }

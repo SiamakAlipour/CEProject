@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 :root {
 	--clr-primary: #3f51b5;
@@ -6,7 +6,7 @@
 	--clr-secondary: #212121;
 	--clr-neutral: #ffffff;
 
-	--ff-primary: Montserrat, sans-serif;
+	--ff-primary: 'Montserrat', sans-serif;
 
 	--ff-body: var(--ff-primary);
 
@@ -23,12 +23,12 @@
 	--fs-primary-heading: var(--fs-600);
 	--fs-primary-nav: var(--fs-400);
 
-	--size-400: 1em;
-	--size-500: 1.375em;
-	--size-600: 1.5em;
-	--size-700: 1.75em;
-	--size-800: 2em;
-	--size-900: 3em;
+	--size-400: 1rem;
+	--size-500: 1.375rem;
+	--size-600: 1.5rem;
+	--size-700: 1.75rem;
+	--size-800: 2rem;
+	--size-900: 3rem;
 }
 
 @media (min-width: 50em) {
