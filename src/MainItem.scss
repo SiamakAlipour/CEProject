@@ -1,0 +1,15 @@
+.main-item {
+	width: 100%;
+	margin-top: 48px;
+	display: grid;
+	place-items: center;
+	&__title {
+		margin-bottom: 45px;
+		font-size: var(--size-600);
+	}
+	&__products {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+	}
+}
