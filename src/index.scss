@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
 
 :root {
 	--clr-primary: #3f51b5;
@@ -6,9 +7,11 @@
 	--clr-secondary: #212121;
 	--clr-neutral: #ffffff;
 
-	--ff-primary: 'Montserrat', sans-serif;
+	--ff-primary: 'Montserrat', sans-serif; // english font
+	--ff-secondary: 'Vazirmatn', sans-serif; // arabic font
 
 	--ff-body: var(--ff-primary);
+	--ff-persian: var(--ff-secondary);
 
 	--fw-regular: 400;
 	--fw-semi-bold: 500;
@@ -23,9 +26,11 @@
 	--fs-primary-heading: var(--fs-600);
 	--fs-primary-nav: var(--fs-400);
 
-	--size-400: 1rem;
+	--size-200: 0.5rem; // 8px
+	--size-300: 0.75rem; // 12px
+	--size-400: 1rem; // 16px
 	--size-500: 1.375rem;
-	--size-600: 1.5rem;
+	--size-600: 1.5rem; // 24px
 	--size-700: 1.75rem;
 	--size-800: 2rem;
 	--size-900: 3rem;
