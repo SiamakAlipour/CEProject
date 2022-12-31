@@ -1,0 +1,13 @@
+.head-carousel {
+	min-height: 392px;
+	.react-multi-carousel-dot-list {
+		bottom: 10px;
+	}
+	&__image {
+		width: 100%;
+		height: 392px;
+		user-select: none;
+		pointer-events: none;
+		object-fit: cover;
+	}
+}
