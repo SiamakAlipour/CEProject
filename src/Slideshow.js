@@ -55,14 +55,18 @@ const responsive = {
 function Slideshow() {
 	return (
 		<div className='slideshow'>
-			<div className='slideshow__discount'>
+			{/* <div className='slideshow__discount'>
 				<p className='slideshow__discountText'>تخفیفات روزانه</p>
 				<FontAwesomeIcon className='slideshow__discountIcon' icon={faTags} />
-			</div>
+			</div> */}
 			<Carousel
 				responsive={responsive}
 				className='slideshow__carousel'
 				draggable={true}>
+				<div className='slideshow__text-box'>
+					<h1>Discounts</h1>
+				</div>
+
 				{images.map((d) => (
 					<div className='slideshow__box'>
 						<img
