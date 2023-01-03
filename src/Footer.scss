@@ -2,4 +2,61 @@
 	background-color: var(--clr-secondary);
 	height: 247px;
 	margin-top: 55px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+	&__navigator {
+		flex: 0.4;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		margin-right: auto;
+	}
+	&__socials {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		> .MuiSvgIcon-root {
+			color: var(--clr-neutral);
+			font-size: var(--size-800);
+			margin-left: 10px;
+		}
+	}
+	&__copyright {
+		flex: 0.25;
+		color: var(--clr-neutral);
+		> a {
+			color: white;
+		}
+	}
+	&__nav {
+		ul {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			li {
+				margin-top: var(--size-300);
+				> a {
+					all: unset;
+					cursor: pointer;
+					color: var(--clr-neutral);
+					font-size: var(--size-300);
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 625px) {
+	.footer {
+		flex-direction: column;
+		&__navigator {
+			flex-direction: column;
+			margin: 0;
+		}
+		&__nav {
+			margin-top: var(--size-500);
+		}
+	}
 }
