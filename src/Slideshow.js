@@ -72,9 +72,9 @@ function Slideshow() {
 						<img
 							src={d.url}
 							alt='carousel images'
-							className='slideshow__boxImage'
+							className='slideshow__box-image'
 						/>
-						<div className='slideshow__boxDescription'>
+						<div className='slideshow__box-description'>
 							<p>name</p>
 							<p>5 %</p>
 						</div>
